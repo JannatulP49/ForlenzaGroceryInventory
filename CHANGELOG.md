@@ -14,4 +14,7 @@
   - View the current inventory.
   - Search for items by name.
 
-
+## Verion 1.2
+- 2025-10-27
+- Made sure the updated list was presented.
+- Attempted to update the new quantity changes.

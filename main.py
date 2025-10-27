@@ -46,8 +46,8 @@ def display_inventory(inventory):
     else:
         print("Current Inventory:")
         for name in inventory:
-            quantity = inventory[name]
-            print(f"{name}: Quantity: {quantity}")
+            new_quantity = inventory[name]
+            print(f"{name}: Quantity: {new_quantity}")
 
 # Initialize inventory with two example items
 inventory = {
@@ -56,9 +56,13 @@ inventory = {
 }
 
 while True:
+    print()
+    # Added this code so when you add or remove something from your list you can get the updated version.
+    print('This is your current inventory: ')
+    #prints your current list
+    print(inventory)
     print("\n1. Add item\n2. Remove item\n3. Update quantity\n4. Display inventory\n5. Exit")
     choice = input("Enter your choice (1-5): ")
-
     if choice == "1":
         name = input("Enter item name: ")
         quantity = int(input("Enter item quantity: "))
@@ -67,9 +71,12 @@ while True:
         name = input("Enter item name to remove: ")
         remove_item(inventory, name)
     elif choice == "3":
-        name = input("Enter item name to update: ")
-        quantity = input("Enter new quantity: ")
-        update_quantity(inventory, name, quantity)
+        item_name = input("Enter item name to update: ")
+        #I had to change the vairble names so that it wouldn't create an error which choice ones vairable.
+        #Also for the new amount it should be calculated as an integer not a string
+        new_quantityy = int(input("Enter new quantity: "))
+        update_quantity(inventory, item_name, new_quantityy)
+        
     elif choice == "4":
         display_inventory(inventory)
     elif choice == "5":
